@@ -1,49 +1,75 @@
 // NavBar
 let navBar = document.querySelector(".navbar");
-// Scroll Btn 
+// Scroll Btn
 let ScrollBtn = document.querySelector(".scrooll-top");
 
 //Add class on navbar and scroll btn if Scrolly > 50
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     navBar.classList.add("default-primary-color");
-    ScrollBtn.classList.add("show")
+    ScrollBtn.classList.add("show");
   } else {
     navBar.classList.remove("default-primary-color");
-    ScrollBtn.classList.remove("show")
+    ScrollBtn.classList.remove("show");
   }
 });
 
-// Handel NavBar Links 
+// Handel NavBar Links
 let navBarLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-navBarLinks.forEach(link => {
+navBarLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     for (let i = 0; i < navBarLinks.length; i++) {
       const element = navBarLinks[i];
-      element.classList.remove("active")
+      element.classList.remove("active");
     }
-    e.target.classList.add("active")
-    let dataScroll = e.target.getAttribute("data-scroll")
-    let sectionId =  dataScroll;
-    let sectionPosition = document.getElementById(sectionId).offsetTop
-    window.scrollTo(0, sectionPosition - 70 )
-  })
+    e.target.classList.add("active");
+    let dataScroll = e.target.getAttribute("data-scroll");
+    let sectionId = dataScroll;
+    let sectionPosition = document.getElementById(sectionId).offsetTop;
+    window.scrollTo(0, sectionPosition - 70);
+  });
 });
 
 // Tesimonials Section
-let indicator = document.querySelectorAll(".indicator span");
-let slide = document.querySelector(".slide-row");
+// Contrals Btn
+let prevBtn = document.querySelector(".prev");
+let nextBtn = document.querySelector(".next");
 
-indicator.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    slide.style.transform = `translatex(${index * -800 + "px"})`;
-    indicator.forEach((span) => {
-      span.classList.remove("active");
-      indicator[index].classList.add("active");
-    });
+// Sliders
+let slides = document.querySelectorAll(".slide");
+
+// Function Click Btns
+function clickingBtn(btn) {
+  btn.addEventListener("click", ()=> {
+    if (btn.classList.contains("prev")) {
+      prevSlide();
+    }
+    if (btn.classList.contains("next")) {
+      nextSlide();
+    }
   });
-});
+}
+// Trigger  Function
+clickingBtn(prevBtn);
+clickingBtn(nextBtn);
+
+// Bring Prev Slide
+function prevSlide() {
+  if (!slides[0].classList.contains("active")) {
+    let currentSlide = document.querySelector(".slide.active");
+    currentSlide.previousElementSibling.classList.add("active");
+    currentSlide.classList.remove("active");
+  } 
+}
+// Bring next Slide
+function nextSlide() {
+  if (!slides[slides.length - 1].classList.contains("active")) {
+    let currentSlide = document.querySelector(".slide.active");
+    currentSlide.nextElementSibling.classList.add("active");
+    currentSlide.classList.remove("active");
+  }
+}
 
 // Latest News Section
 let heading = document.querySelectorAll(".latest-head h3");
@@ -86,7 +112,7 @@ inputs.forEach((input) => {
   });
 });
 
-// Scroll To Top Btn 
+// Scroll To Top Btn
 ScrollBtn.addEventListener("click", () => {
-  window.scrollTo(0, 0)
-})
+  window.scrollTo(0, 0);
+});
