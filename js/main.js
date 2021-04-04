@@ -60,7 +60,11 @@ function prevSlide() {
     let currentSlide = document.querySelector(".slide.active");
     currentSlide.previousElementSibling.classList.add("active");
     currentSlide.classList.remove("active");
-  } 
+    prevBtn.style.opacity = 1
+    nextBtn.style.opacity = 1
+  } else {
+    prevBtn.style.opacity = .3
+  }
 }
 // Bring next Slide
 function nextSlide() {
@@ -68,6 +72,10 @@ function nextSlide() {
     let currentSlide = document.querySelector(".slide.active");
     currentSlide.nextElementSibling.classList.add("active");
     currentSlide.classList.remove("active");
+    prevBtn.style.opacity = 1
+    nextBtn.style.opacity = 1
+  } else {
+    nextBtn.style.opacity = .3
   }
 }
 

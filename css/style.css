@@ -227,17 +227,17 @@ header::before {
   background: var(--text-primary-color);
   overflow: hidden;
 }
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .slide-container {
     height: 430px;
   }
 }
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .slide-container {
     height: 490px;
   }
 }
-@media(max-width: 557px) {
+@media (max-width: 557px) {
   .slide-container {
     height: 490px;
   }
@@ -271,11 +271,11 @@ header::before {
   -o-transform: translateX(0);
   z-index: 2;
 }
-.slide .person img{
- width: 100px;
- height: 100px;
- padding: 3px;
- border: 3px solid var(--dark-primary-color);
+.slide .person img {
+  width: 100px;
+  height: 100px;
+  padding: 3px;
+  border: 3px solid var(--dark-primary-color);
 }
 .slide-contral {
   position: absolute;
@@ -292,6 +292,9 @@ header::before {
   padding: 0 16px;
   font-size: 25px;
   border-radius: 0;
+  background-color: var(--dark-primary-color);
+  color: var(--text-primary-color);
+
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -305,8 +308,6 @@ header::before {
 .slide-contral .prev:focus,
 .slide-contral .next:focus {
   box-shadow: none;
-  background-color: var(--dark-primary-color);
-  color: var(--text-primary-color);
 }
 /* End Testimonials */
 
