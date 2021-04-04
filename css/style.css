@@ -60,7 +60,7 @@ header {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-image: url("../img/slide-3.jpg");
+  background-image: url("../img/header/bg-header.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -171,7 +171,7 @@ header::before {
 
 /* Start services  */
 .services {
-  background-image: url("../img/services-background.jpg");
+  background-image: url("../img/services/bg-services.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -312,13 +312,7 @@ header::before {
 /* End Testimonials */
 
 /* Start Latest News  */
-.latest-head {
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
+
 @media (max-width: 991px) {
   .latest-head {
     display: flex;
@@ -414,11 +408,7 @@ header::before {
   -moz-transition: var(--transition);
   -ms-transition: var(--transition);
   -o-transition: var(--transition);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+ 
 }
 .latest-content.active {
   display: block;
@@ -460,8 +450,9 @@ header::before {
 
 /* Start Contact Us */
 .contact-us {
-  background: url("../img/contact-us-bg.jpg") center no-repeat;
+  background: url("../img/contactus/bg-contact-us.jpg") center no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
   z-index: 0;
 }
